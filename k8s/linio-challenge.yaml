@@ -15,36 +15,11 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: linio-challenge
-        image: registry.cloud.okteto.net/bpmxdesa/linio-challenge:dev
+        image: registry.cloud.okteto.net/mauriciovalli/linio-challenge:dev
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
         env:
-          - name: DATABASE_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: database
-                key: username
-          - name: DATABASE_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: database
-                key: password
-          - name: DATABASE_HOST
-            valueFrom:
-              secretKeyRef:
-                name: database
-                key: host
-          - name: DATABASE_PORT
-            valueFrom:
-              secretKeyRef:
-                name: database
-                key: port
-          - name: DATABASE_DATABASE
-            valueFrom:
-              secretKeyRef:
-                name: database
-                key: database
 ---
 kind: ConfigMap
 apiVersion: v1

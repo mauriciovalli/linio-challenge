@@ -1,7 +1,6 @@
 icon: https://github.com/okteto/spring-microservices/raw/master/icon.png
 deploy:
-  - kubectl apply -f k8s/database-secrets.yml
-  - okteto build -t registry.cloud.okteto.net/bpmxdesa/linio-challenge:dev -f Dockerfile --secret id=database,src=k8s/database-secrets.yml
+  - okteto build -t registry.cloud.okteto.net/mauriciovalli/linio-challenge:dev -f Dockerfile
   - kubectl apply -f k8s/linio-challenge.yaml
 devs:
   - okteto.yml
