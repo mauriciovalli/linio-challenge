@@ -1,0 +1,22 @@
+# Spring
+spring:
+  application:
+    name: linio-challenge
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_DATABASE}
+#    username: ${DATABASE_USERNAME}
+#    password: ${DATABASE_PASSWORD}
+#  jpa:
+#    show-sql: true
+#    database: POSTGRESQL
+#    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+#    hibernate:
+#      ddl-auto: update
+# Management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#        exclude: "env,beans"

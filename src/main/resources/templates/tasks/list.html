@@ -1,0 +1,39 @@
+<!--
+  ~ (C) Copyright  2011/2021 BPMX.  All Rights Reserved
+  ~ THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF BPMX.
+  ~ The copyright notice above does not evidence any actual or intended
+  ~ publication of such source code.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>BPM Flowable</title>
+</head>
+<body>
+<h1>Bpm Task List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Assignee</th>
+        <th>Process Definition ID</th>
+        <th>Form key</th>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.id}"> 123</td>
+        <td th:text="${task.name}"> Task name</td>
+        <td th:text="${task.description}"> Task description</td>
+        <td th:text="${task.priority}"> 0</td>
+        <td th:text="${task.assignee}"> Task assignee</td>
+        <td th:text="${task.processDefinitionId}"> 123</td>
+        <td th:text="${task.formKey}"> 123</td>
+    </tr>
+</table>
+
+</body>
+</html>

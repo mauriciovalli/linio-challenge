@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linio-challenge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linio-challenge
+  template:
+    metadata:
+      labels:
+        app: linio-challenge
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: linio-challenge
+        image: registry.cloud.okteto.net/bpmxdesa/linio-challenge:dev
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+        env:
+          - name: DATABASE_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: username
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: password
+          - name: DATABASE_HOST
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: host
+          - name: DATABASE_PORT
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: port
+          - name: DATABASE_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: database
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: linio-challenge
+data:
+  application.yml: |-
+    spring:
+     cloud:
+      kubernetes:
+        discovery:
+          all-namespaces: false
+          service-labels:
+            spring-boot: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: linio-challenge
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: linio-challenge

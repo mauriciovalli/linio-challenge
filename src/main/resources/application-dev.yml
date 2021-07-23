@@ -1,0 +1,12 @@
+server:
+  port: 8080
+# Spring
+#spring:
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    url:
+#  jpa:
+#    show-sql: true
+#    database: H2
+#    database-platform: org.hibernate.dialect.H2Dialect
+
