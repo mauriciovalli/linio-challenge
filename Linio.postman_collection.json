@@ -50,6 +50,56 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://linio-challenge-mauriciovalli.cloud.okteto.net/rest/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://linio-challenge-mauriciovalli.cloud.okteto.net/rest/",
+					"protocol": "https",
+					"host": [
+						"linio-challenge-mauriciovalli",
+						"cloud",
+						"okteto",
+						"net"
+					],
+					"path": [
+						"rest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://linio-challenge-mauriciovalli.cloud.okteto.net/rest/print?number=30",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://linio-challenge-mauriciovalli.cloud.okteto.net/rest/print?number=30",
+					"protocol": "https",
+					"host": [
+						"linio-challenge-mauriciovalli",
+						"cloud",
+						"okteto",
+						"net"
+					],
+					"path": [
+						"rest",
+						"print"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

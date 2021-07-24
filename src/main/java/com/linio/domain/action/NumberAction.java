@@ -26,8 +26,8 @@ public class NumberAction {
     public String toString(int number) {
         // if number is multiple of number1 or number2
         if (number % NUMBER1 == 0 || number % NUMBER2 == 0) {
-            // if number is multiple of number1 and not number2 -> position 0
-            // if number is multiple of number2 and not number1 -> position 1
+            // if number is multiple of number1 and not of number2 -> position 0
+            // if number is multiple of number2 and not of number1 -> position 1
             // if number is multiple of number1 and number2 -> position 2
             return STRING_VALUES[boolToInt(number % NUMBER2 == 0 && number % NUMBER1 >= 1) + boolToInt(number % MULTIPLE_BOTH == 0) * 2];
         }

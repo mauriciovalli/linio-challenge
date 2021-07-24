@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class NumberActionTest {
+    private static final int NUMBER1 = 3;
+    private static final int NUMBER2 = 5;
     private final
     NumberAction myAction = new NumberAction();
 
@@ -20,20 +22,11 @@ class NumberActionTest {
         final String expected = "IT";
 
         for (int i = 1; i <= 100; i++) {
-            if (i % 5 == 0 && i % 3 != 0) {
+            if (i % NUMBER2 == 0 && i % NUMBER1 != 0) {
                 // Assert the response
                 assertEquals(expected, myAction.toString(i));
             }
         }
-
-//        assertEquals(expected, myAction.toString(5));
-//        assertEquals(expected, myAction.toString(10));
-//        assertEquals(expected, myAction.toString(20));
-//        assertEquals(expected, myAction.toString(25));
-//        assertEquals(expected, myAction.toString(35));
-//        assertEquals(expected, myAction.toString(40));
-//        assertEquals(expected, myAction.toString(50));
-//        assertEquals(expected, myAction.toString(55));
     }
 
     @Test
@@ -41,19 +34,11 @@ class NumberActionTest {
         final String expected = "Linianos";
 
         for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
+            if (i % NUMBER1 == 0 && i % NUMBER2 == 0) {
                 // Assert the response
                 assertEquals(expected, myAction.toString(i));
             }
         }
-
-
-//        assertEquals(expected, myAction.toString(15));
-//        assertEquals(expected, myAction.toString(30));
-//        assertEquals(expected, myAction.toString(45));
-//        assertEquals(expected, myAction.toString(60));
-//        assertEquals(expected, myAction.toString(75));
-//        assertEquals(expected, myAction.toString(90));
     }
 
     @Test
@@ -61,15 +46,20 @@ class NumberActionTest {
         final String expected = "Linio";
 
         for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 != 0) {
+            if (i % NUMBER1 == 0 && i % NUMBER2 != 0) {
                 // Assert the response
                 assertEquals(expected, myAction.toString(i));
             }
         }
-//        assertEquals(expected, myAction.toString(3));
-//        assertEquals(expected, myAction.toString(6));
-//        assertEquals(expected, myAction.toString(9));
-//        assertEquals(expected, myAction.toString(12));
-//        assertEquals(expected, myAction.toString(18));
+    }
+
+    @Test
+    void testNumbers() {
+        for (int i = 1; i <= 100; i++) {
+            if (i % NUMBER1 != 0 && i % NUMBER2 != 0) {
+                // Assert the response
+                assertEquals(String.valueOf(i), myAction.toString(i));
+            }
+        }
     }
 }

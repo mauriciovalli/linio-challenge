@@ -13,7 +13,7 @@
 ```
     ./mvnw clean compile    
 ```
-3. Print Numbers with CommandLine
+3. Print Numbers to CommandLine
 ```
     ./mvnw exec:java -Dexec.mainClass="com.linio.CommanLineApp" 
 ```
@@ -31,7 +31,7 @@
 ```
 7. Print numbers on webpage
 ```
-http://localhost:8080/print
+    http://localhost:8080/print
 ```
 
 ### JUnit tests
@@ -54,5 +54,10 @@ This project is deploy in Okteto Cloud with Kubernetes
 ```
 3. Print numbers on webpage
 ```
-https://linio-challenge-mauriciovalli.cloud.okteto.net/print
+    https://linio-challenge-mauriciovalli.cloud.okteto.net/print
 ```
+
+### Postman
+
+You can use postman project for test
+- Export file ./Linio.postman_collection.json

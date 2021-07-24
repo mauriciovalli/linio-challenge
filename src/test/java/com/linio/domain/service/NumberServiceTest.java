@@ -28,6 +28,8 @@ class NumberServiceTest {
     @Test
     void testPrintAllNumbers() throws JsonProcessingException {
         final ListDto<String> result = myService.printAllNumbers();
+
+        // Assert the response
         assertEquals(EXPECTEED_JSON, mapToJson(result));
     }
 
@@ -42,11 +44,11 @@ class NumberServiceTest {
             if (i % 3 == 0 && i % 5 != 0) {
                 assertEquals(expectedLinio, myService.printNumber(i));
             } else if (i % 5 == 0 && i % 3 != 0) {
-                assertEquals(expectedIT, myAction.toString(i));
+                assertEquals(expectedIT, myService.printNumber(i));
             } else if (i % 3 == 0 && i % 5 == 0) {
-                assertEquals(expectedLinianos, myAction.toString(i));
+                assertEquals(expectedLinianos, myService.printNumber(i));
             } else {
-                assertEquals(String.valueOf(i), myAction.toString(i));
+                assertEquals(String.valueOf(i), myService.printNumber(i));
             }
         }
     }
