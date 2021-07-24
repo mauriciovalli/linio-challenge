@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Print Numbers 1-100</title>
+</head>
+<body>
+<h1>Print Numbers 1-100</h1>
+
+<table>
+    <tr th:each="number : ${numbers}">
+        <td th:text="${number}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
